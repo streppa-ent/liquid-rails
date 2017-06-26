@@ -22,3 +22,6 @@ tmp
 mkmf.log
 spec/dummy/log/*
 gemfiles/*.lock
+.idea
+.ruby-version
+.ruby-gemset
