@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   get '/erb_with_html_liquid_partial',  to: 'home#erb_with_html_liquid_partial'
 
+  get '/index_with_html_erb_partial',   to: 'home#index_with_html_erb_partial'
+
   get '/foospace/bar/index_partial',    to: 'foospace/bar#index_partial'
 end

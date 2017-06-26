@@ -20,6 +20,10 @@ class HomeController < ApplicationController
   def erb_with_html_liquid_partial
   end
 
+  def index_with_html_erb_partial
+
+  end
+
   private
 
     def set_book
