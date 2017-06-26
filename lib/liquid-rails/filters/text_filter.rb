@@ -8,7 +8,7 @@ module Liquid
                 :word_wrap,
                 :simple_format,
 
-                to: :h
+                to: :hh
 
       # right justify and padd a string
       def rjust(input, integer, padstr = '')
@@ -36,8 +36,8 @@ module Liquid
 
       private
 
-        def h
-          @h ||= @context.registers[:view]
+        def hh
+          @hh ||= @context.registers[:view]
         end
     end
   end

@@ -5,12 +5,12 @@ module Liquid
                 :strip_tags,
                 :strip_links,
 
-                to: :h
+                to: :hh
 
       private
 
-        def h
-          @h ||= @context.registers[:view]
+        def hh
+          @hh ||= @context.registers[:view]
         end
     end
   end

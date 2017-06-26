@@ -9,26 +9,26 @@ module Liquid
     describe AssetUrlFilter do
       subject { AssetUrlFilterKlass.new }
 
-      it { should delegate(:asset_path).to(:h) }
-      it { should delegate(:asset_url).to(:h) }
+      it { should delegate(:asset_path).to(:hh) }
+      it { should delegate(:asset_url).to(:hh) }
 
-      it { should delegate(:audio_path).to(:h) }
-      it { should delegate(:audio_url).to(:h) }
+      it { should delegate(:audio_path).to(:hh) }
+      it { should delegate(:audio_url).to(:hh) }
 
-      it { should delegate(:font_path).to(:h) }
-      it { should delegate(:font_url).to(:h) }
+      it { should delegate(:font_path).to(:hh) }
+      it { should delegate(:font_url).to(:hh) }
 
-      it { should delegate(:image_path).to(:h) }
-      it { should delegate(:image_url).to(:h) }
+      it { should delegate(:image_path).to(:hh) }
+      it { should delegate(:image_url).to(:hh) }
 
-      it { should delegate(:javascript_path).to(:h) }
-      it { should delegate(:javascript_url).to(:h) }
+      it { should delegate(:javascript_path).to(:hh) }
+      it { should delegate(:javascript_url).to(:hh) }
 
-      it { should delegate(:stylesheet_path).to(:h) }
-      it { should delegate(:stylesheet_url).to(:h) }
+      it { should delegate(:stylesheet_path).to(:hh) }
+      it { should delegate(:stylesheet_url).to(:hh) }
 
-      it { should delegate(:video_path).to(:h) }
-      it { should delegate(:video_url).to(:h) }
+      it { should delegate(:video_path).to(:hh) }
+      it { should delegate(:video_url).to(:hh) }
     end
   end
 end
