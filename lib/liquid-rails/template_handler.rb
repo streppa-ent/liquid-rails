@@ -24,7 +24,7 @@ module Liquid
         assigns['content_for_layout'] = @view.content_for(:layout) if @view.content_for?(:layout)
         assigns.merge!(local_assigns.stringify_keys)
 
-        template_resolver = Liquid::Rails::ResolverSystem.new(@view)
+        template_resolver = Liquid::Rails::PartialResolver.new(@view)
         liquid = Liquid::Template.parse(template)
         render_method = (::Rails.env.development? || ::Rails.env.test?) ? :render! : :render
 
@@ -32,7 +32,7 @@ module Liquid
             view: @view,
             controller: @controller,
             helper: @helper,
-            file_system: Liquid::Rails::ResolverSystem.new(@controller)
+            file_system: template_resolver
         }
 
         liquid.send(render_method, assigns, filters: filters, registers: registers).html_safe
