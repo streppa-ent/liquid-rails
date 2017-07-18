@@ -22,8 +22,9 @@ module Liquid
         super
 
         if markup =~ Syntax
-          @flush = $3
-          @identifier = $1.gsub('\'', '')
+          @flush = Regexp.last_match[3]
+          @identifier = Regexp.last_match[1].gsub(/\'|"/, '')
+          @identifier = @identifier.to_sym if @identifier.gsub!(/^:/, '')
         else
           raise SyntaxError.new("Syntax Error - Valid syntax: {% content_for [name] %}")
         end
