@@ -10,13 +10,13 @@ module Liquid
 
       # Return a valid liquid template string for requested partial path
       def read_template_file(template_path)
-        controller_path = controller.controller_path
+        controller_path = @controller.controller_path
         template_path   = "#{controller_path}/#{template_path}" unless template_path.include?('/')
 
         name = template_path.split('/').last
         prefix = template_path.split('/')[0...-1].join('/')
 
-        result = controller.view_paths.find_all(name, prefix, true, details(controller))
+        result = @controller.view_paths.find_all(name, prefix, true, details(@controller))
 
         raise FileSystemError, "No such template '#{template_path}'" unless result.present?
 
