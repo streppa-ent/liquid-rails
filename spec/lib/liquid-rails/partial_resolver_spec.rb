@@ -31,7 +31,7 @@ describe 'Request', type: :feature do
       expect(page.body.strip).to eq("Foospace::BarController\n\nVendor Theme Bar Partial")
     end
 
-    it 'will resolve non-liquid partial paths' do
+    it 'will resolve non-liquid partial' do
       visit '/index_with_html_erb_partial'
 
       expect(page.body.strip).to eq("Application Layout\nLiquid on Rails\n\nHome HTML ERB Partial\n\nShared HTML ERB Partial")
