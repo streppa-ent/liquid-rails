@@ -59,7 +59,8 @@ module Liquid
         super
 
         if markup =~ Syntax
-          @identifier = $1.gsub('\'', '')
+          @identifier = Regexp.last_match[1].gsub(/\'|"/, '')
+          @identifier = @identifier.to_sym if @identifier.gsub!(/^:/, '')
         else
           raise SyntaxError.new("Syntax Error - Valid syntax: {% yield [name] %}")
         end
